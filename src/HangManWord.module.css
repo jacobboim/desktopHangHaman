@@ -1,0 +1,27 @@
+.hangmanWord {
+  font-size: 5rem;
+}
+
+.letterBounce {
+  animation: bounce 0.2s ease-in-out forwards;
+  /* margin-top: 50%; */
+}
+
+@keyframes bounce {
+  0% {
+    transform: scale(1);
+    border-color: #ddd;
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .hangmanWord {
+    font-size: 3rem;
+  }
+}

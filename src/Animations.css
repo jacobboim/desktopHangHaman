@@ -1,0 +1,31 @@
+.slideHelp {
+  animation: slide-inLeft 1s;
+}
+
+.letterBounce {
+  /* animation: bounce 0.2s ease-in-out forwards; */
+
+  margin-top: 1000px;
+}
+
+@keyframes slide-inLeft {
+  from {
+    transform: translateX(-563%);
+  }
+  to {
+    transform: translateX(0%);
+  }
+}
+
+@keyframes bounce {
+  0% {
+    transform: scale(1);
+    border-color: #ddd;
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
