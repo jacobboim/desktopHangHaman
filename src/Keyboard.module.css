@@ -1,3 +1,11 @@
+.divForLetters {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 0.7rem;
+}
+
 .btn {
   width: 100%;
   border: 3px solid black;
@@ -25,16 +33,20 @@
   background-color: hsl(200, 100%, 75%);
 }
 
+.helpLetters {
+  padding: 20px;
+  font-size: 25px;
+}
+
 @media screen and (max-width: 600px) {
   .btn {
-    width: 100%;
-    border: 3px solid black;
     background: none;
-    aspect-ratio: 1 / 1;
-    font-size: 30px;
+    font-size: 1.2rem;
     text-transform: uppercase;
-    font-weight: bold;
-    cursor: pointer;
-    color: black;
+    padding: 0.3rem;
+  }
+
+  .iosLetters {
+    width: 33px;
   }
 }
