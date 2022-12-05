@@ -82,6 +82,7 @@
   position: absolute;
   top: 90px;
   right: -30px;
+  animation: slide-inLeft 1s;
 }
 .body {
   width: 10px;
@@ -290,6 +291,7 @@
     position: absolute;
     top: 90px;
     right: 25px;
+    animation: slide-inLeft 1s;
   }
   .body {
     width: 10px;
@@ -367,5 +369,14 @@
     top: 0px;
     right: 57px;
     position: absolute;
+  }
+}
+
+@keyframes slide-inLeft {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0%);
   }
 }

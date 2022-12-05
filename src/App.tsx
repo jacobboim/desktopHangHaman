@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useCallback } from "react";
 
 import words from "./wordList.json";
-
 import HangManDrawing from "./HangManDrawing";
 import HangManWord from "./HangManWord";
 import Keyboard from "./Keyboard";
@@ -9,6 +8,9 @@ import Modal from "./Modal";
 
 import "./Animations.css";
 import "./App.css";
+
+import styled, { keyframes } from "styled-components";
+import { fadeInDown } from "react-animations";
 
 function getWord() {
   return words[Math.floor(Math.random() * words.length)];
@@ -87,10 +89,23 @@ function App() {
   }, []);
 
   useEffect(() => {
-    hasWon();
-    hasLost();
+    setTimeout(() => {
+      if (hasWon() || hasLost()) {
+        setShowModal(true);
+        setGameOver(true);
+      }
+    }, 1500);
+    // hasWon();
+    // hasLost();
   }, [isWinner, isLoser]);
   console.log(wordToGuess);
+  console.log(showModal, " this is show modal");
+
+  const bounceAnimation = keyframes`${fadeInDown}`;
+
+  const BouncyDiv = styled.div`
+    animation: 1s ${bounceAnimation};
+  `;
 
   return (
     <div
@@ -127,9 +142,11 @@ function App() {
         />
       </div>
 
-      {(hasWon() || hasLost()) && (
+      {/* {(hasWon() || hasLost()) && (
         <Modal isWinner={isWinner} wordToGuess={wordToGuess} />
-      )}
+      )} */}
+
+      {showModal && <Modal isWinner={isWinner} wordToGuess={wordToGuess} />}
     </div>
   );
 }

@@ -1,20 +1,51 @@
 import React from "react";
+import styled, { keyframes } from "styled-components";
+import {
+  fadeInDown,
+  flipInX,
+  flipInY,
+  slideInDown,
+  swing,
+  rollIn,
+  fadeInDownBig,
+} from "react-animations";
 
 import "./App.css";
 
-const HEAD = <div className="head" />;
+const bounceAnimation = keyframes`${fadeInDown}`;
+const LeftArmAnimationKey = keyframes`${flipInY}`;
+const BodyAnimationKey = keyframes`${fadeInDownBig}`;
+const HatAnimationKey = keyframes`${rollIn}`;
 
-const HAT = <div className="triangle" />;
+const HatDiv = styled.div`
+  animation: 1s ${HatAnimationKey};
+`;
 
-const BODY = <div className="body" />;
+const BouncyDiv = styled.div`
+  animation: 1s ${bounceAnimation};
+`;
 
-const RIGHT_ARM = <div className="armRight" />;
+const LeftArmAnimation = styled.div`
+  animation: 1s ${LeftArmAnimationKey};
+`;
 
-const LEFT_ARM = <div className="armLeft" />;
+const BodyAnimation = styled.div`
+  animation: 1s ${BodyAnimationKey};
+`;
 
-const RIGHT_LEG = <div className="legRight" />;
+const HEAD = <BouncyDiv className="head" />;
 
-const LEFT_LEG = <div className="legLeft" />;
+const HAT = <HatDiv className="triangle" />;
+
+const BODY = <BouncyDiv className="body" />;
+
+const RIGHT_ARM = <LeftArmAnimation className="armRight" />;
+
+const LEFT_ARM = <LeftArmAnimation className="armLeft" />;
+
+const RIGHT_LEG = <LeftArmAnimation className="legRight" />;
+
+const LEFT_LEG = <LeftArmAnimation className="legLeft" />;
 
 const BODY_PARTS = [HAT, HEAD, BODY, RIGHT_ARM, LEFT_ARM, RIGHT_LEG, LEFT_LEG];
 
